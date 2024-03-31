@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>5 Day Forecast</title>
 </head>
 
@@ -21,12 +22,18 @@
                 <h2>Search for a City:</h2>
                 <div>
                     <input id="city"></input>
-                    <a class="btn btn-info">Search</a>
+                    <a class="btn btn-info btn-search">Search</a>
                     <div id="searched-cities"></div>
                 </div>
             </div>
             <div class="col-12 col-lg-9">
                 <div id="weather-today"></div>
+            </div>
+        </div>
+        <div class="row">
+         
+            <div class="col-12 col-lg-9">
+                <div id="five-days-weather"></div>
             </div>
         </div>
     </main>
