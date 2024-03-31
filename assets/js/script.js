@@ -118,6 +118,7 @@ function display5DaysBlocks(weather, today) {
         const days = currentDate.diff(today, 'days');
         if (days > 0 && currentDate.hour() === 15) {
             const newRow = document.createElement("div");
+            newRow.classList.add("next-days")
             const nameOfSearchedLocation = document.createElement("h3");
             nameOfSearchedLocation.textContent = `(${currentDate.format('MM/D/YYYY')})`;
 
@@ -132,9 +133,9 @@ function display5DaysBlocks(weather, today) {
 
             const icon = document.createElement("img");
             icon.setAttribute("src", `https://openweathermap.org/img/wn/${element.weather[0].icon}.png`)
-            fiveDaysWeather
+           
             newRow.append(nameOfSearchedLocation);
-            nameOfSearchedLocation.append(icon)
+            newRow.append(icon)
             newRow.append(mainTemp)
             newRow.append(wind)
             newRow.append(humidity)

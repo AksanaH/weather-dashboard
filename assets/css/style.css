@@ -1,3 +1,57 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    width: 90%;
+}
 #five-days-weather {
     display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+header {
+    background-image: linear-gradient(to right, blue , rgb(5, 5, 137));
+    text-align: center;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#city{
+    margin: 5px;
+}
+
+.left-column a {
+    margin: 5px;
+    /* background-color: blue; */
+   
+}
+
+#searched-cities {
+    display: flex;
+    flex-direction: column;
+}
+
+#searched-cities button {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(175, 172, 172);
+}
+
+#weather-today{
+    border: 1px solid black;
+}
+
+.next-days {
+    background-color: rgb(6, 6, 69);
+    padding: 12px;
 }
