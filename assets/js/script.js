@@ -58,7 +58,7 @@ function search(cityName, needUpdateLocations) {
 
 }
 async function searchByCityName(cityName) {
-    const coordinatesAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`
+    const coordinatesAPIUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`
     const coordinates = await fetch(coordinatesAPIUrl)
         .then(function (response) {
             return response.json();
@@ -69,7 +69,7 @@ async function searchByCityName(cityName) {
                 lon: data[0].lon,
             }
         });
-    const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`
+    const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`
     const weather = await fetch(weatherAPI)
         .then(function (response) {
             return response.json();
