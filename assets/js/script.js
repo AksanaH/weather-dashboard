@@ -3,6 +3,7 @@ const weatherToday = document.getElementById('weather-today');
 const fiveDaysWeather = document.getElementById('five-days-weather');
 const searchButton = document.querySelector('.btn-search');
 const cityInput = document.getElementById('city');
+const apiKey = "cdeb16e9afd1fe2ebd0a226a64efa381";
 
 function init() {
     const searchedLocations = JSON.parse(localStorage.getItem('locations'));
@@ -57,7 +58,7 @@ function search(cityName, needUpdateLocations) {
 
 }
 async function searchByCityName(cityName) {
-    const coordinatesAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=fccdefd57bcea699f68e81473b5ec93c`
+    const coordinatesAPIUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`
     const coordinates = await fetch(coordinatesAPIUrl)
         .then(function (response) {
             return response.json();
@@ -68,7 +69,7 @@ async function searchByCityName(cityName) {
                 lon: data[0].lon,
             }
         });
-    const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=fccdefd57bcea699f68e81473b5ec93c`
+    const weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`
     const weather = await fetch(weatherAPI)
         .then(function (response) {
             return response.json();
